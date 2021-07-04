@@ -1,0 +1,20 @@
+Напишите программу, которая считывает из файла строку, соответствующую тексту, сжатому с помощью кодирования повторов,
+и производит обратную операцию, получая исходный текст.
+Запишите полученный текст в файл.
+
+newLine = ''
+
+with open("C:\\Users\\User\\Desktop\\123.txt", 'r') as f:
+    s = f.readline().strip()
+i = 0
+while i < len(s):
+    j = i + 1
+    while j < len(s) and s[j].isdigit():
+        j += 1
+    newLine += s[i] * int(s[i+1:j])
+    i = j
+
+out = open("C:\\Users\\User\\Desktop\\Out123.txt", 'w')
+out.write(newLine)
+
+
