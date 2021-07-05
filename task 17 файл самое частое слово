@@ -1,0 +1,14 @@
+Напишите программу, которая считывает текст из файла (в файле может быть больше одной строки)
+и выводит самое частое слово в этом тексте и через пробел то, сколько раз оно встретилось. 
+Если таких слов несколько, вывести лексикографически первое (можно использовать оператор < для строк).
+
+with open("C:\\Users\\User\\Desktop\\3 копии иска.docx") as inf, open("C:\\Users\\User\\Desktop\\Out123.txt",'w') as ouf:
+    max = 0
+    s = inf.read().lower().strip().split()
+    s.sort()
+    for word in s:
+        counter = s.count(word)
+        if counter > max:
+            max = counter
+            result_word = word
+    ouf.write(result_word +' ' + str(max))
