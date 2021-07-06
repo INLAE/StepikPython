@@ -1,0 +1,15 @@
+Перевожу текст с транслита на латиницу.
+
+
+alphabet = "йцукенгшщзхъфывапролджэячсмитьбюё ' '"
+length = len(alphabet)
+
+cipher = "qwertyuiop[]asdfghjkl;'zxcvbnm,.`'' '"
+
+decrypt = str(input())
+
+DictEncrypt = {alphabet[i]: cipher[i] for i in range(length)}
+DictDecrypt = {cipher[i]: alphabet[i] for i in range(length)}
+
+for i in decrypt:
+    print(DictDecrypt[i], end="")
